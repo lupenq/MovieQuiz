@@ -14,6 +14,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     
     private var alertPresenter = AlertPresenter()
     
+    private var statisticService: StatisticServiceProtocol!
+    
     private var currentQuestionIndex = 0
 
     private var correctAnswers = 0
@@ -28,6 +30,8 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         let factory = QuestionFactory()
         factory.setup(delegate: self)
         questionFactory = factory
+        
+        statisticService = StatisticService()
         
         questionFactory.requestNextQuestion()
     }
@@ -82,7 +86,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     }
     
     func show(quiz result: QuizResultsViewModel) {
-        let message = result.text
+        let message = "\(result.text)\nКоличество сыгранных квизов: \(statisticService.gamesCount)\nРекорд: \(statisticService.bestGame.correct)/\(statisticService.bestGame.total) (\(statisticService.bestGame.date.dateTimeString))\nСредняя точность: \(String(format: "%.2f", statisticService.totalAccuracy))%"
         let model = AlertModel(title: result.title, message: message, buttonText: result.buttonText) { [weak self] in
             guard let self = self else { return }
 
@@ -98,12 +102,14 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         imageView.layer.borderWidth = 0
 
         if currentQuestionIndex == questionsAmount - 1 {
-            let text = "Ваш результат: \(correctAnswers)/10" // 1
-            let viewModel = QuizResultsViewModel( // 2
+            statisticService.store(correct: correctAnswers, total: questionsAmount)
+            
+            let text = "Ваш результат: \(correctAnswers)/10"
+            let viewModel = QuizResultsViewModel(
                 title: "Этот раунд окончен!",
                 text: text,
                 buttonText: "Сыграть ещё раз")
-            show(quiz: viewModel) // 3
+            show(quiz: viewModel)
         } else {
             currentQuestionIndex += 1
             
