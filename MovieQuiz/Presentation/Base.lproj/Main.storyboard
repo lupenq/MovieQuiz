@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24128" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,7 +45,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Deadpool" translatesAutoresizingMaskIntoConstraints="NO" id="Ngh-gm-1a5" userLabel="Preview Image">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ngh-gm-1a5" userLabel="Preview Image">
                                         <rect key="frame" x="0.0" y="43.5" width="374" height="561"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <constraints>
@@ -57,8 +57,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCz-LF-Pkc" userLabel="Question Label">
-                                        <rect key="frame" x="0.0" y="624.5" width="341" height="17.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCz-LF-Pkc" userLabel="Question Label">
+                                        <rect key="frame" x="0.0" y="624.5" width="0.0" height="17.5"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
                                         <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-ZG-2Yg" userLabel="Buttons">
                                         <rect key="frame" x="0.0" y="662" width="374" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lav-7X-ENu" userLabel="No Button">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lav-7X-ENu" userLabel="No Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
                                                 <color key="backgroundColor" name="YP White"/>
                                                 <constraints>
@@ -86,7 +86,7 @@
                                                     <action selector="noButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H3f-tD-xU6"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVe-aj-v7W" userLabel="Yes Button">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVe-aj-v7W" userLabel="Yes Button">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="60"/>
                                                 <color key="backgroundColor" name="YP White"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
@@ -116,6 +116,9 @@
                                     <constraint firstAttribute="trailing" secondItem="fv0-hz-ioW" secondAttribute="trailing" id="Vjd-oJ-eix"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4bU-BG-j9q">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Background"/>
@@ -123,13 +126,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JF9-XL-Twf" secondAttribute="trailing" constant="20" id="8di-4Z-6F8"/>
                             <constraint firstItem="JF9-XL-Twf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NHe-un-Fhb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JF9-XL-Twf" secondAttribute="bottom" id="ckV-i6-pbn"/>
+                            <constraint firstItem="4bU-BG-j9q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hzr-Wq-vPc"/>
+                            <constraint firstItem="4bU-BG-j9q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l8l-7W-Ab2"/>
                             <constraint firstItem="JF9-XL-Twf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="vj1-fb-A9D"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="4bU-BG-j9q" id="3g2-Aa-ic6"/>
                         <outlet property="counterLabel" destination="XAN-zR-ftO" id="Wio-Km-8nZ"/>
                         <outlet property="imageView" destination="Ngh-gm-1a5" id="ECJ-g8-Mrx"/>
+                        <outlet property="noButtonView" destination="lav-7X-ENu" id="lUE-kc-PCj"/>
                         <outlet property="textLabel" destination="bCz-LF-Pkc" id="I29-N0-V97"/>
+                        <outlet property="yesButtonView" destination="lVe-aj-v7W" id="aro-JP-UnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,7 +146,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Deadpool" width="2000" height="3000"/>
         <namedColor name="YP Background">
             <color red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
