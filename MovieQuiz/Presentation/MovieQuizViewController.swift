@@ -42,6 +42,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
 
         showLoadingIndicator()
         questionFactory.loadData()
+        toggleDisableButtons()
     }
 
     func toggleDisableButtons() {
