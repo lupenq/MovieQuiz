@@ -68,7 +68,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
 
             self.imageView.alpha = 0
             self.toggleDisableButtons()
-            self.textLabel.text = ""
             self.showLoadingIndicator()
         }
     }
